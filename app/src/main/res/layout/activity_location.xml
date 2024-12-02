@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Google Map Fragment -->
+    <fragment
+        android:id="@+id/mapFragmentContainer"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <!-- Image Button -->
+    <ImageButton
+        android:id="@+id/buttonLocation"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@null"
+        android:scaleType="centerInside"
+        android:padding="4dp"
+        android:src="@drawable/ic_location"
+        android:contentDescription="Location Icon" />
+
+    <!-- Date filter to choose visited locations by date -->
+    <android.widget.DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- Swipe-to-refresh layout for refreshing visited locations -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Timeline of visited locations -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewTimeline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</LinearLayout>
